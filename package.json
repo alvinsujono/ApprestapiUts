@@ -1,0 +1,24 @@
+{
+  "name": "apprestapi",
+  "version": "1.0.0",
+  "description": "aplikasi uts rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinsujono/ApprestapiUts.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs"
+  ],
+  "author": "alvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvinsujono/ApprestapiUts/issues"
+  },
+  "homepage": "https://github.com/alvinsujono/ApprestapiUts#readme"
+}
