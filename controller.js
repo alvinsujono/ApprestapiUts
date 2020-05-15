@@ -83,3 +83,22 @@ exports.tambahsparepart = function (req, res) {
             }
         });
 };
+//menambahkan data service
+exports.tambahservice = function (req, res) {
+    
+    var tgl_service = req.body.tgl_service;
+    var id_user = req.body.id_user;
+    var id_montir = req.body.id_montir;
+    var jumlah_sparepart = req.body.jumlah_sparepart;
+    var id_sparepart = req.body.id_sparepart;
+
+    connection.query('INSERT INTO t_servis (tgl_service,id_user,id_montir,jumlah_sparepart,id_sparepart) VALUES(?,?,?,?,?)',
+        [tgl_service,id_user,id_montir,jumlah_sparepart,id_sparepart],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};
