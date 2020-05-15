@@ -9,4 +9,6 @@ module.exports = function(app){
     .get(jsonku.tampilsemuamontir);
     app.route('/tampil/:id')
         .get(jsonku.tampilberdasarkanid);
+        app.route('/tambah')
+        .post(jsonku.tambahMontir);
 }

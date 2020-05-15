@@ -28,3 +28,19 @@ exports.tampilberdasarkanid = function (req, res) {
             }
         });
 };
+//menambahkan data montir
+exports.tambahMontir = function (req, res) {
+    var id_montir = req.body.id_montir;
+    var Nama_montir = req.body.Nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+
+    connection.query('INSERT INTO t_montir (id_montir,Nama_montir,harga_perjam) VALUES(?,?,?)',
+        [id_montir, Nama_montir, harga_perjam],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Berhasil Menambahkan Data!", res)
+            }
+        });
+};
