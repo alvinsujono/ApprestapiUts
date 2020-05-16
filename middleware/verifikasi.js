@@ -18,7 +18,7 @@ function verifikasi(){
                         req.auth = decoded;
                         next();
                     }else {
-                        return rest.status(401).send({auth:false, message:'Gagal mengotorisasi role anda!'});
+                        return rest.status(401).send({auth:false, message:'Gagal mengotorisasi level anda!'});
                     }
                 }
             });
