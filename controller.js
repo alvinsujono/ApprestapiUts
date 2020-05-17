@@ -103,3 +103,20 @@ exports.tambahservice = function (req, res) {
             }
         });
 };
+//input data montir
+exports.tambahmontir = function (req, res) {
+    var Nama_montir = req.body.Nama_montir;
+    var harga_perjam = req.body.harga_perjam;    
+
+
+    connection.query('INSERT INTO t_montir (Nama_montir,harga_perjam) VALUES (?,?)',
+        [Nama_montir, harga_perjam],
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Input Data Montir Sukses", res);
+            }
+        });
+};
