@@ -334,3 +334,22 @@ exports.hapuslevel = function (req, res) {
             }
         });
 };
+
+//hapus servis
+exports.hapusservis = function (req, res) {
+    var id_servis = req.body.id_servis;    
+
+    connection.query('DELETE FROM t_servis WHERE id_servis=?',
+    [id_servis],
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Data Servis Berhasil Dihapus", res);
+            }
+        });
+};
+exports.halamanrahasia1 = function(req,res){
+    response.ok("Halaman ini hanya untuk user dengan level = 1 !",res);
+}
