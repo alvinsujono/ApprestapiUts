@@ -319,3 +319,18 @@ exports.hapususer = function (req, res) {
             }
         });
 };
+//hapus level
+exports.hapuslevel = function (req, res) {
+    var id_level = req.body.id_level;    
+
+    connection.query('DELETE FROM t_level WHERE id_level=?',
+    [id_level],
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Data Level Berhasil Dihapus", res);
+            }
+        });
+};
