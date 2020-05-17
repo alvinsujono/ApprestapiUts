@@ -290,4 +290,18 @@ exports.hapusmontir = function (req, res) {
                 response.ok("Data Montir Berhasil Dihapus", res);
             }
         });
+};//hapus sparepart
+exports.hapussparepart = function (req, res) {
+    var id_sparepart = req.body.id_sparepart;    
+
+    connection.query('DELETE FROM t_sparepart WHERE id_sparepart=?',
+    [id_sparepart],
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Data Sparepart Berhasil Dihapus", res);
+            }
+        });
 };
