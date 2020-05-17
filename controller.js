@@ -203,4 +203,22 @@ exports.ubahmontir = function (req, res) {
             } else {
                 response.ok("Data Montir Berhasil Diubah", res);
             }
-        });
+        });};
+        //ubah sparepart
+        exports.ubahsparepart = function (req, res) {
+            var id_sparepart = req.body.id_sparepart;
+            var nama_sparepart = req.body.nama_sparepart;
+            var harga_sparepart = req.body.harga_sparepart;    
+            var satuan = req.body.satuan;
+        
+            connection.query('UPDATE t_sparepart SET nama_sparepart=?,harga_sparepart=?,satuan=? WHERE id_sparepart=?',
+            [nama_sparepart,harga_sparepart,satuan,id_sparepart],
+        
+                function (error, rows, fields) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        response.ok("Data Sparepart Berhasil Diubah", res);
+                    }
+                });
+        };
