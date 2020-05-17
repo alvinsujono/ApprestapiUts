@@ -304,4 +304,18 @@ exports.hapussparepart = function (req, res) {
                 response.ok("Data Sparepart Berhasil Dihapus", res);
             }
         });
+};//hapus user
+exports.hapususer = function (req, res) {
+    var id_user = req.body.id_user;    
+
+    connection.query('DELETE FROM t_user WHERE id_user=?',
+    [id_user],
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Data User Berhasil Dihapus", res);
+            }
+        });
 };
