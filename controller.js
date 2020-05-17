@@ -186,3 +186,21 @@ exports.tampilgroupsparepart = function (req, res) {
     )
 
 }
+
+//ubah montir
+exports.ubahmontir = function (req, res) {
+    var id_montir = req.body.id_montir;
+    var nama_montir = req.body.nama_montir;
+    var harga_perjam = req.body.harga_perjam;    
+
+
+    connection.query('UPDATE t_montir SET nama_montir=?,harga_perjam=? WHERE id_montir=?',
+    [nama_montir,harga_perjam,id_montir],
+
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Data Montir Berhasil Diubah", res);
+            }
+        });
